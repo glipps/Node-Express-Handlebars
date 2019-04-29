@@ -1,14 +1,14 @@
 var mysql = require('mysql');
 var connection;
 
-if (process.env.JAWSDB_URL) {
-	connection = mysql.createConnection(process.env.JAWSDB_URL);
+if (process.env.PIZZADA_URL) {
+	connection = mysql.createConnection(process.env.PIZZADB_URL);
 } else {
   connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'trilogy',
     password: 'password1234',
-    database: 'burgers_db1'
+    database: 'pizzas_db1'
   });
 };
 
