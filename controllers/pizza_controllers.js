@@ -8,8 +8,8 @@ pizza_router.use(bodyParser.urlencoded({extended: false}));
 pizza_router.use(bodyParser.text());
 pizza-router.use(bodyParser.json({type:"application/vnd.api + json"}));
 
-pizza_router.get("/", function(request, reposonse) {
-    Response.redirect("/pizzar");
+pizza_router.get("/", function(request, response) {
+    response.redirect("/pizza");
 });
 
 pizza_router.get("/pizza", function(request, response) {
@@ -25,7 +25,7 @@ pizza_router.post("/pizza/add", function(response, response) {
     });
 });
 
-pizza_router.put("/pizza/updte/:?", function(request, repsonse) {
+pizza_router.put("/pizza/updte/:?", function(request, response) {
     var user_id = parseInt(request.params.id);
     pizza_call.update(uder_id, function(data) {
         response.redirect("/pizza");
@@ -33,4 +33,3 @@ pizza_router.put("/pizza/updte/:?", function(request, repsonse) {
 });
 
 module.exports = pizza_router;
-
